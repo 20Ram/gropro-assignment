@@ -1,0 +1,381 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Mortgage Broker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #0d1b2a;
+      color: white;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #b89f60;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b89f60;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7));
+                   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: #b89f60;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 25px;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .btn:hover {
+      background-color: #a08050;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 50px 0;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex: 1 1 calc(33.333% - 20px);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #0d1b2a;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .cta h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background-color: #b89f60;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 25px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #a08050;
+    }
+
+    footer {
+      background-color: #0d1b2a;
+      color: white;
+      padding: 20px 0;
+    }
+
+    footer .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    footer .socials a {
+      color: white;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    footer .socials a:hover {
+      color: #b89f60;
+    }
+
+    footer p {
+      text-align: center;
+      font-size: 14px;
+    }
+    #contact {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+#contact .container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #0d1b2a;
+}
+
+#contact p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #666;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact form label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+#contact form input,
+#contact form textarea {
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+  border-color: #b89f60;
+  outline: none;
+}
+
+#contact form button {
+  padding: 15px;
+  background-color: #b89f60;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+  background-color: #a08050;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">Luxury Mortgage</div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Refined Mortgage Solutions</h1>
+    <p>Your path to luxury living starts here.</p>
+    <a href="#contact" class="btn">Get a Quote</a>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Personalized Support</h3>
+        <p>Work with a dedicated advisor for tailored mortgage solutions.</p>
+      </div>
+      <div class="feature">
+        <h3>Exclusive Deals</h3>
+        <p>Access premium loan options that fit your lifestyle.</p>
+      </div>
+      <div class="feature">
+        <h3>Trusted Expertise</h3>
+        <p>Years of experience delivering exceptional service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to Start Your Application?</h2>
+  <a href="#contact">Apply Now</a>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Fill out the form below, and we’ll get back to you promptly.</p>
+    <form>
+      <!-- Name Field -->
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <!-- Email Field -->
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <!-- Phone Field -->
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}"
+        required>
+
+      <!-- Message Field -->
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Type your message here"></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>© 2024 Luxury Mortgage. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<!-- Placeholder for Live Chat Widget -->
+<script>
+  // Example script for adding live chat functionality
+  (function() {
+    const chatWidget = document.createElement('div');
+    chatWidget.id = 'live-chat-widget';
+    chatWidget.style.position = 'fixed';
+    chatWidget.style.bottom = '20px';
+    chatWidget.style.right = '20px';
+    chatWidget.style.width = '60px';
+    chatWidget.style.height = '60px';
+    chatWidget.style.backgroundColor = '#b89f60';
+    chatWidget.style.borderRadius = '50%';
+    chatWidget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    chatWidget.style.cursor = 'pointer';
+    chatWidget.style.display = 'flex';
+    chatWidget.style.alignItems = 'center';
+    chatWidget.style.justifyContent = 'center';
+    chatWidget.innerHTML = '<i style="font-size: 24px; color: white;">💬</i>';
+    chatWidget.addEventListener('click', () => alert('Live Chat Coming Soon!'));
+    document.body.appendChild(chatWidget);
+  })();
+</script>
+
+</body>
+</html>
